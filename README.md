@@ -55,7 +55,7 @@ making sure that you add the expectations dependency and the lein-autoexpect plu
     (is (= 0 1))))
 ```
 
-Change part clojure.test :refer :all in the :require section to expectations :refer :all so it looks like this:
+Replace the phrase clojure.test to the word expectations. It should look something like this:
 
 ```bash
 (ns test-project.core-test
