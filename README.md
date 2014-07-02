@@ -73,15 +73,17 @@ Now, you can erase the call to deftest, replacing it with something along the li
 lein autoexpect
 ```
 
-and then hit enter. It should say something like:
+and then hit enter. Some extra things might print; you can ignore those. At the end, it should say something like:
 
 ```bash
-Ran 1 tests containing 1 assertions in 13 msecs
+Ran 1 tests containing 1 assertions in 14 msecs
 0 failures, 0 errors.
 ```
+
+It might even use pretty colors!
 
 Now you can happily code in LightTable and every time you save, your tests will run automatically and show the results in the terminal. Note, if you want autoexpect to stop running, hit Ctrl+c (or Ctrl+z on Mac).
 
 Happy coding!
 
-Any comments and/or confusions? We'd love to hear from you! Email elenam@morris.umn.edu if you have any concerns!
+Any comments and/or confusions? We'd love to hear from you! Email saxxx027@morris.umn.edu if you have any concerns!
