@@ -3,7 +3,7 @@ Introduction-to-LightTable
 
 A guide to setting up and using the features of LightTable.
 
-Our cloning url is to the right, or you can just click Clone to Desktop to get a copy of this repository on your personal computer. (If you have git installed, go ahead and clone it in the command line).
+Our cloning url is to the right, or you can just click Clone in Desktop to get a copy of this repository on your personal computer. (If you have git installed, go ahead and clone it in the command line).
 
 #Set Up of Java
 
