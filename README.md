@@ -35,7 +35,7 @@ into the command line, and watch it self-install a bunch of things. Then, type l
 
 You can download LightTable from http://www.lighttable.com/. Downloading LightTable is pretty easy. Follow the steps on the LightTable download site, move the folder that appears to the location you want on your computer, and you're set to go!
 
-#Set Up of Expectations
+#Set Up of Autoexpect
 
 For expectations, there is a little bit of formatting needed to make sure everything works correctly. You can make a new project by cd-ing into the desired directory and then typing:
 
@@ -104,13 +104,45 @@ Now you can happily code in LightTable and every time you save, your tests will 
 
 Happy coding!
 
-#Uninstalling
+For more information on Autoexpect, take a look at this link: http://jayfields.com/expectations/collections.html
+
+#Uninstalling the Programs Listed Above
 
 If you ever would like to uninstall any of the software explained above, then feel free to follow these steps.
 
-1. Java: If you would like to uninstall java (although we have no idea why you would feel the need to), you can go to this site: java.com/remove and follow the directions to uninstall java.
-2. Leiningen: First, you must make sure that you delete both the .lein hidden file. This would probably be somewhere like your home, but it could be other places. If needed, use the command ls -a (on mac and linux) or dir /a (on windows). Then, assuming that lein is in your /usr/bin, you can go ahead and do sudo rm /usr/bin/lein to delete the lein folder from your /usr/bin. Check that leiningen is fully uninstalled by typing lein into your command line. No leiningen commands should appear.
-3. LightTable:
-4. Expectations:
+Java: If you would like to uninstall Java (although we have no idea why you would feel the need to), you can go to this site: 
+
+```bash
+java.com/remove
+```
+and follow the directions to uninstall Java.
+
+Leiningen: First, you must make sure that you delete both the .lein hidden file. This would probably be somewhere like your home, but it could be other places. If needed, use the command 
+
+```bash
+ls -a
+```
+
+(on mac and linux) or 
+
+```bash
+dir /a 
+```
+(on windows). Then, assuming that lein is in your /usr/bin, you can go ahead and do 
+
+```bash
+sudo rm /usr/bin/lein 
+```
+to delete the lein folder from your /usr/bin. Check that leiningen is fully uninstalled by typing 
+
+```bash
+lein 
+```
+
+into your command line. No leiningen commands should appear.
+
+LightTable: On windows, you can use the uninstall tool, otherwise, your best bet would be to just drag it to trash and then empty your trash.
+
+Autoexpect: Autoexpect isn't a thing we really "installed," so therefore, there is no uninstalling. If you would like to stop using Autoexpect, just stop using it. Technically, Expectations and Autoexpect are just part of Leiningen.
 
 Any comments and/or confusions? We'd love to hear from you! Email saxxx027@morris.umn.edu if you have any concerns!
