@@ -4,7 +4,7 @@
 
 ;##################################################################################
 ;; You can use Expectations to check that two things are equal using this form: ###
-;; (expect expected actual)                                                     ###
+;; (expect expected actual).                                                    ###
 ;##################################################################################
 
 (expect 5 (+ 2 3))
@@ -15,11 +15,12 @@
 
 (expect "R" (:rating (get-movie-object "The Prestige")))
 
+;; This will fail
 ;(expect 1752 (:year (get-movie-object "The Ring")))
 
-;########################################################################
-;; These tests use regular expressions to search for parts of strings ###
-;########################################################################
+;#########################################################################
+;; These tests use regular expressions to search for parts of strings. ###
+;#########################################################################
 
 (expect #"van" "nirvana")
 
@@ -27,26 +28,21 @@
 
 (expect #"(.*) Years a Slave" (:title (get-movie-object "12 Years a Slave")))
 
+;; This will fail
 ;(expect #"(.+) Obama" (:director (get-movie-object "Frozen")))
 
-;#####################################################################
-;; We can use Expectations to see if an element is in a collection ###
-;#####################################################################
+;######################################################################
+;; We can use Expectations to see if an element is in a collection. ###
+;######################################################################
 
-(expect 5 (in #{9 4 6 3 5 7 8}))
+(expect 5 (in #{1 3 5 7}))
 
 (expect {:genre "Drama"} (in (get-movie-object "12 Years a Slave")))
 
 (expect {:year 2012} (in (get-movie-object "The Hunger Games")))
 
+;; This will fail
 ;(expect {:year 1776} (in (get-movie-object "The Prestige")))
-
-;#####################################################################
-;; The below will fail because the assert must be in the form of a ###
-;; hashmap in this scenario                                        ###
-;#####################################################################
-
-;(expect "Action" (in (get-movie-object "The Dark Knight")))
 
 ;###########################################################################
 ;; You can also use Expectations using a predicate as the first argument ###
@@ -68,16 +64,20 @@
 
 (expect not-string? (:year (get-movie-object "Frozen")))
 
+;; This will fail
 ;(expect number? (:genre (get-movie-object "The Big Lebowski")))
 
-;############################################################################
-;; Basically, this means that if we were to call                          ###
-;; (number? (:year (first movie-collection))), that would result in true: ###
-;############################################################################
+;###########################################################################
+;; Above, a predicate is used as the first argument, but we could write  ###
+;; the same test by clarifying whether we expect true or false, and then ###
+;; calling the predicate explicitly in the second argument.              ###
+;###########################################################################
 
 (expect true (number? (:year (first movie-collection))))
 
 (expect true (not-string? (:year (get-movie-object "Frozen"))))
+
+(expect false (number? (:director (get-movie-object "Frozen"))))
 
 ;###########################################
 ;; Example of how partial would be used: ###
@@ -86,23 +86,36 @@
 (expect (helper-movie-object-has-director? "Steve McQueen" (get-movie-object
                                                             "12 Years a Slave")))
 
+;; This will throw an error
 ;(expect (helper-movie-object-has-director? "Steve McQueen") (get-movie-object
 ;                                                             "12 Years a Slave"))
 
 (expect (movie-object-has-director? "Steve McQueen") (get-movie-object
                                                       "12 Years a Slave"))
 
-;################################################################################
-;; More is a macro and can be used to combine multiple checks into one assert ###
-;################################################################################
+;#########################################################################
+;; If you are expecting a piece of code to throw an exception, you can ###
+;; test for it like this:                                              ###
+;#########################################################################
+(expect ClassCastException (+ :one :two))
+
+(expect Exception ((helper-movie-object-has-director? "Steve McQueen")
+                   (get-movie-object "12 Years a Slave")))
+
+;#################################################################################
+;; More is a macro and can be used to combine multiple checks into one assert. ###
+;#################################################################################
 
 (expect (more vector? not-empty) movie-collection)
 
 (expect (more vector? not-empty #(= 9 (count %))) movie-collection)
 
+;; This will fail
+;(expect (more set? not-empty #(= 9 (count %))) movie-collection)
+
 ;##############################################################################
 ;; However, when you want to check things that take more than one argument, ###
-;; you can use more->                                                       ###
+;; you can use more->.                                                      ###
 ;##############################################################################
 
 (expect (more-> (get-movie-object "The Ring") first
@@ -119,9 +132,10 @@
 
 ;##################################################################
 ;; However, you must be careful because order is very specific. ###
-;; Here, we've just switched :title and "The Hunger Games"      ###
+;; Here, we've just switched :title and "The Hunger Games".     ###
 ;##################################################################
 
+;; This will throw an error
 ;(expect (more-> :title "The Hunger Games"
 ;                "Gary Ross" :director
 ;                2012 :year
@@ -129,7 +143,6 @@
 ;                142 :length
 ;                "PG-13" :rating)
 ;        (get-movie-object "The Hunger Games"))
-
 
 ;#############################################################################
 ;; If you'd like to give a name to the object you're testing, then more-of ###
@@ -187,13 +200,14 @@
 ;; This below test is the same thing as above, but just with the :when removed. ###
 ;##################################################################################
 
+;; This will throw an error
 ;(expect odd? (from-each [val (vals (get-movie-object "Argo"))
 ;                         :let [val-increment (inc val)]]
 ;                         val-increment))
 
 ;##############################################################################
 ;; Using a variety of more, more->, more-of, and from-each, you can combine ###
-;; together parts to create more elaborate and efficient tests:             ###
+;; parts together to create more elaborate tests:                           ###
 ;##############################################################################
 
 (expect (more map? #(= 6 (count %)))
@@ -201,8 +215,8 @@
                    movie-object))
 
 ;################################################################################
-;; expect-focused is a way to ensure that only those tests (the ones declared ###
-;; with expect-focused) are ran. All others are ignored                       ###
+;; Expect-focused is a way to ensure that only those tests (the ones declared ###
+;; with expect-focused) are ran. All others are ignored.                      ###
 ;################################################################################
 
 ;(expect-focused 9 (count movie-collection))
