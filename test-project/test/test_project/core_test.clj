@@ -7,13 +7,13 @@
 ;; (expect expected actual).                                                    ###
 ;##################################################################################
 
-(expect 5 (+ 2 3))
+;(expect 5 (+ 2 3))
 
-(expect 9 (count movie-collection))
+;(expect 9 (count movie-collection))
 
-(expect "Ben Affleck" (:director (get-movie-object "Argo")))
+;(expect "Ben Affleck" (:director (get-movie-object "Argo")))
 
-(expect "R" (:rating (get-movie-object "The Prestige")))
+;(expect "R" (:rating (get-movie-object "The Prestige")))
 
 ;; This will fail
 ;(expect 1752 (:year (get-movie-object "The Ring")))
@@ -22,11 +22,11 @@
 ;; These tests use regular expressions to search for parts of strings. ###
 ;#########################################################################
 
-(expect #"van" "nirvana")
+;(expect #"van" "nirvana")
 
-(expect #"Juliet" (:title (get-movie-object "Romeo and Juliet")))
+;(expect #"Juliet" (:title (get-movie-object "Romeo and Juliet")))
 
-(expect #"(.*) Years a Slave" (:title (get-movie-object "12 Years a Slave")))
+;(expect #"(.*) Years a Slave" (:title (get-movie-object "12 Years a Slave")))
 
 ;; This will fail
 ;(expect #"(.+) Obama" (:director (get-movie-object "Frozen")))
@@ -35,11 +35,11 @@
 ;; We can use Expectations to see if an element is in a collection. ###
 ;######################################################################
 
-(expect 5 (in #{1 3 5 7}))
+;(expect 5 (in #{1 3 5 7}))
 
-(expect {:genre "Drama"} (in (get-movie-object "12 Years a Slave")))
+;(expect {:genre "Drama"} (in (get-movie-object "12 Years a Slave")))
 
-(expect {:year 2012} (in (get-movie-object "The Hunger Games")))
+;(expect {:year 2012} (in (get-movie-object "The Hunger Games")))
 
 ;; This will fail
 ;(expect {:year 1776} (in (get-movie-object "The Prestige")))
@@ -50,19 +50,19 @@
 ;; A predicate is a function that returns true or false.                 ###
 ;###########################################################################
 
-(expect number? 2093)
+;(expect number? 2093)
 
-(expect true? (number? 4))
+;(expect true? (number? 4))
 
-(expect zero? 0)
+;(expect zero? 0)
 
-(expect char? \h)
+;(expect char? \h)
 
-(expect list? '(:this :is :an :example))
+;(expect list? '(:this :is :an :example))
 
-(expect number? (:year (first movie-collection)))
+;(expect number? (:year (first movie-collection)))
 
-(expect not-string? (:year (get-movie-object "Frozen")))
+;(expect not-string? (:year (get-movie-object "Frozen")))
 
 ;; This will fail
 ;(expect number? (:genre (get-movie-object "The Big Lebowski")))
@@ -73,42 +73,42 @@
 ;; calling the predicate explicitly in the second argument.              ###
 ;###########################################################################
 
-(expect true (number? (:year (first movie-collection))))
+;(expect true (number? (:year (first movie-collection))))
 
-(expect true (not-string? (:year (get-movie-object "Frozen"))))
+;(expect true (not-string? (:year (get-movie-object "Frozen"))))
 
-(expect false (number? (:director (get-movie-object "Frozen"))))
+;(expect false (number? (:director (get-movie-object "Frozen"))))
 
 ;###########################################
 ;; Example of how partial would be used: ###
 ;###########################################
 
-(expect (helper-movie-object-has-director? "Steve McQueen" (get-movie-object
-                                                            "12 Years a Slave")))
+;(expect (helper-movie-object-has-director? "Steve McQueen" (get-movie-object
+;                                                            "12 Years a Slave")))
 
 ;; This will throw an error
 ;(expect (helper-movie-object-has-director? "Steve McQueen") (get-movie-object
 ;                                                             "12 Years a Slave"))
 
-(expect (movie-object-has-director? "Steve McQueen") (get-movie-object
-                                                      "12 Years a Slave"))
+;(expect (movie-object-has-director? "Steve McQueen") (get-movie-object
+;                                                      "12 Years a Slave"))
 
 ;#########################################################################
 ;; If you are expecting a piece of code to throw an exception, you can ###
 ;; test for it like this:                                              ###
 ;#########################################################################
-(expect ClassCastException (+ :one :two))
+;(expect ClassCastException (+ :one :two))
 
-(expect Exception ((helper-movie-object-has-director? "Steve McQueen")
-                   (get-movie-object "12 Years a Slave")))
+;(expect Exception ((helper-movie-object-has-director? "Steve McQueen")
+;                   (get-movie-object "12 Years a Slave")))
 
 ;#################################################################################
 ;; More is a macro and can be used to combine multiple checks into one assert. ###
 ;#################################################################################
 
-(expect (more vector? not-empty) movie-collection)
+;(expect (more vector? not-empty) movie-collection)
 
-(expect (more vector? not-empty #(= 9 (count %))) movie-collection)
+;(expect (more vector? not-empty #(= 9 (count %))) movie-collection)
 
 ;; This will fail
 ;(expect (more set? not-empty #(= 9 (count %))) movie-collection)
@@ -118,17 +118,17 @@
 ;; you can use more->.                                                      ###
 ;##############################################################################
 
-(expect (more-> (get-movie-object "The Ring") first
-                (get-movie-object "The Big Lebowski") last)
-        movie-collection)
+;(expect (more-> (get-movie-object "The Ring") first
+;                (get-movie-object "The Big Lebowski") last)
+;        movie-collection)
 
-(expect (more-> "The Hunger Games" :title
-                "Gary Ross" :director
-                2012 :year
-                "Adventure" :genre
-                142 :length
-                "PG-13" :rating)
-        (get-movie-object "The Hunger Games"))
+;(expect (more-> "The Hunger Games" :title
+;                "Gary Ross" :director
+;                2012 :year
+;                "Adventure" :genre
+;                142 :length
+;                "PG-13" :rating)
+;        (get-movie-object "The Hunger Games"))
 
 ;##################################################################
 ;; However, you must be careful because order is very specific. ###
@@ -149,52 +149,52 @@
 ;; should be used:                                                         ###
 ;#############################################################################
 
-(expect (more-of x
-                 vector? x
-                 not-empty x)
-        movie-collection)
+;(expect (more-of x
+;                 vector? x
+;                 not-empty x)
+;        movie-collection)
 
-(expect (more-of x
-                 vector? x
-                 not-empty x
-                 #(= 9 (count %)) x)
-        movie-collection)
+;(expect (more-of x
+;                 vector? x
+;                 not-empty x
+;                 #(= 9 (count %)) x)
+;        movie-collection)
 
 ;#################################################################
 ;; More-of is especially nice when your x is more complicated: ###
 ;#################################################################
 
-(expect (more-of x
-                 #(= (:title %) "The Hunger Games") x ;can do predicate of x
-                 #(= (:director %) "Gary Ross") x
-                 #(= (:year %) 2012) x
-                 "Adventure" (:genre x)   ;or can check that two things are equal
-                 142 (:length x)
-                 "PG-13" (:rating x))
-        (get-movie-object "The Hunger Games"))
+;(expect (more-of x
+;                 #(= (:title %) "The Hunger Games") x ;can do predicate of x
+;                 #(= (:director %) "Gary Ross") x
+;                 #(= (:year %) 2012) x
+;                 "Adventure" (:genre x)   ;or can check that two things are equal
+;                 142 (:length x)
+;                 "PG-13" (:rating x))
+;        (get-movie-object "The Hunger Games"))
 
 ;###########################################################################
 ;; Using from-each, we can loop over the elements of some collection and ###
 ;; check that all of the elements pass an assertion:                     ###
 ;###########################################################################
 
-(expect map?
-        (from-each [movie-object movie-collection]
-                   movie-object))
+;(expect map?
+;        (from-each [movie-object movie-collection]
+;                   movie-object))
 
 ;###########################################################################
 ;; From-each can be combined with :when and :let to narrow down what you ###
 ;; want to examine:                                                      ###
 ;###########################################################################
 
-(expect even? (from-each [val (vals (get-movie-object "Argo"))
-                          :when (number? val)]
-                         val))
+;(expect even? (from-each [val (vals (get-movie-object "Argo"))
+;                          :when (number? val)]
+;                         val))
 
-(expect odd? (from-each [val (vals (get-movie-object "Argo"))
-                         :when (number? val)
-                         :let [val-increment (inc val)]]
-                         val-increment))
+;(expect odd? (from-each [val (vals (get-movie-object "Argo"))
+;                         :when (number? val)
+;                         :let [val-increment (inc val)]]
+;                         val-increment))
 
 ;##################################################################################
 ;; This below test is the same thing as above, but just with the :when removed. ###
@@ -210,9 +210,9 @@
 ;; parts together to create more elaborate tests:                           ###
 ;##############################################################################
 
-(expect (more map? #(= 6 (count %)))
-        (from-each [movie-object movie-collection]
-                   movie-object))
+;(expect (more map? #(= 6 (count %)))
+;        (from-each [movie-object movie-collection]
+;                   movie-object))
 
 ;################################################################################
 ;; Expect-focused is a way to ensure that only those tests (the ones declared ###
