@@ -3,15 +3,15 @@ Introduction-to-LightTable
 
 A guide to setting up and using the features of LightTable.
 
-Our cloning url is to the right, or you can just click Clone in Desktop to get a copy of this repository on your personal computer. (If you have git installed, go ahead and clone it in the command line).
+Our git cloning url is to the right, or you can just click Clone in Desktop to get a copy of this repository on your personal computer. 
 
-#Set Up of Java
+#Java setup
 
-Firstly, you should have Java, and the Java Developers Kit, already downloaded on your computer. If that isn't installed already, go to http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html and click the JDK option for your operating system. Follow the given directions for completing this download.
+Firstly, you should have Java, and the Java Developers Kit, already installed on your computer. If it isn't installed already, go to http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html and click the JDK option for your operating system. Follow the given directions for completing this download.
 
-#Set Up of Leiningen
+#Leiningen setup
 
-You can download Leiningen from http://leiningen.org/. Downloading Leiningen can be tricky, so be patient. Start by downloading the lein script. If when trying to download the lein script, the script just opens (instead of downloading), first try right-clicking and saving it as lein to a place such as the desktop. If that doesn't work, then try making a new text file and copy-pasting the whole script into the new file on your computer and saving it as lein to a location such as the desktop. Then cd into the place you've saved the file, such as desktop. Then move it using the terminal by typing
+You can download Leiningen from http://leiningen.org/. Make sure you have a reliable internet connection since leiningen runs a self-install script. Start by downloading the lein script. If when trying to download the lein script, the script just opens (instead of downloading), first try right-clicking and saving it as lein to a place such as the desktop. If that doesn't work, then try making a new text file and copy-pasting the whole script into the new file on your computer and saving it as lein to a location such as the desktop. Then cd into the place you've saved the file, such as desktop. Then move it using the terminal by typing
 
 ```bash
 sudo mv lein /usr/bin/lein
@@ -31,11 +31,11 @@ lein
 
 into the command line, and watch it self-install a bunch of things. Then, type lein once more, and when a list of leiningen commands appear, you know that leiningen is fully installed!
 
-#Set Up of LightTable
+#LightTable setup
 
 You can download LightTable from http://www.lighttable.com/. Downloading LightTable is pretty easy. Follow the steps on the LightTable download site, move the folder that appears to the location you want on your computer, and you're set to go!
 
-#Set Up of Autoexpect
+#Autoexpect setup
 
 For expectations, there is a little bit of formatting needed to make sure everything works correctly. You can make a new project by cd-ing into the desired directory and then typing:
 
@@ -51,7 +51,7 @@ into the command line. We've named our project: test-project. It should say that
   :dependencies [[org.clojure/clojure "1.3.0"]])
 ```
 
-Change your project.clj file so it looks like this:
+Change your project.clj file by adding the expectations library and autoexpect plugin, so that it looks like this:
 
 ```bash
 (defproject test-project "1.0.0-SNAPSHOT"
@@ -61,7 +61,7 @@ Change your project.clj file so it looks like this:
   :plugins [[lein-autoexpect "1.0"]])
 ```
 
-making sure that you add the expectations dependency and the lein-autoexpect plugin; the description can be whatever you like. Save the file. Next, open up your test file by clicking test/  and clicking through as many nested folders as needed to get to core_test.clj. Once open, your project should look something like this:
+making sure that you add the expectations dependency and the lein-autoexpect plugin; the description can be whatever you like. Save the file. Next, open up your test file by clicking test/  and clicking through as many nested folders as needed to get to core_test.clj. Once open, core_test.clj should look something like this:
 
 ```bash
 (ns test-project.core-test
@@ -85,7 +85,17 @@ Replace the phrase clojure.test to the word expectations. It should look somethi
     (is (= 0 1))))
 ```
 
-Now, you can erase the call to deftest, replacing it with something along the lines of (expect 5 (+ 2 3)). This is the most basic form of testing using autoexpect. Now, be sure you save the file and then go to the command line, cd into the project directory, and type
+Now, you can erase the call to deftest, and replace it with an expectations test, for instance:
+
+```bash
+(ns test-project.core-test
+  (:require [expectations :refer :all]
+            [test-project.core :refer :all]))
+
+(expect 5 (+ 2 3))
+```
+
+This is the most basic form of testing using expectations. Now, be sure you save the file and then go to the command line, cd into the project directory, and type
 
 ```bash
 lein autoexpect
@@ -117,23 +127,19 @@ java.com/remove
 ```
 and follow the directions to uninstall Java.
 
-Leiningen: First, you must make sure that you delete both the .lein hidden file. This would probably be somewhere like your home, but it could be other places. If needed, use the command
+Leiningen: First, you must make sure that you delete both the lein script (the file that you have downloaded) and the .lein hidden folder that stores leiningen internal data. This would probably be somewhere like your home directory, but it could be other places. Since .lein is a hidden folder (the name starts with a dot), you need to use the option for showing hidden files on your system. On mac and linux on the command line use the command to list hidden files:
 
 ```bash
 ls -a
 ```
 
-(on mac and linux) or
+On windows, use:
 
 ```bash
 dir /a
 ```
-(on windows). Then, assuming that lein is in your /usr/bin, you can go ahead and do
 
-```bash
-sudo rm /usr/bin/lein
-```
-to delete the lein folder from your /usr/bin. Check that leiningen is fully uninstalled by typing
+After you have deleted by the lein script and the .lein fiolder, check that leiningen is fully uninstalled by typing
 
 ```bash
 lein
@@ -143,6 +149,6 @@ into your command line. No leiningen commands should appear.
 
 LightTable: On windows, you can use the uninstall tool, otherwise, your best bet would be to just drag it to trash and then empty your trash.
 
-Autoexpect: Autoexpect isn't a thing we really "installed," so therefore, there is no uninstalling. If you would like to stop using Autoexpect, just stop using it. Technically, Expectations and Autoexpect are just part of Leiningen.
+Autoexpect: Autoexpect isn't a thing we really "installed," so therefore, there is no uninstalling. If you would like to remove expectations or autoexpect plugin from from your project, remove references to them from your project.clj file. 
 
 Any comments and/or confusions? We'd love to hear from you! Email saxxx027@morris.umn.edu if you have any concerns!
