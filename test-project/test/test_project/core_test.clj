@@ -87,6 +87,7 @@
 ;                                                            "12 Years a Slave")))
 
 ;; This will throw an error
+;; The error is caused by a problem in the test syntax, not the code.
 ;(expect (helper-movie-object-has-director? "Steve McQueen") (get-movie-object
 ;                                                             "12 Years a Slave"))
 
