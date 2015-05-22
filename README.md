@@ -1,4 +1,4 @@
-Introduction-to-LightTable
+Introduction-to-LightTable [![Code Climate](https://codeclimate.com/github/emmasax1/Introduction-to-LightTable/badges/gpa.svg)](https://codeclimate.com/github/emmasax1/Introduction-to-LightTable)
 ==========================
 
 A guide to setting up and using the features of LightTable.
@@ -73,7 +73,7 @@ making sure that you add the expectations dependency and the lein-autoexpect plu
     (is (= 0 1))))
 ```
 
-Replace the phrase clojure.test to the word expectations. It should look something like this:
+Replace the phrase `clojure.test` to the word expectations. It should look something like this:
 
 ```bash
 (ns test-project.core-test
