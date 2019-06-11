@@ -1,5 +1,4 @@
-Introduction-to-LightTable [![Code Climate](https://codeclimate.com/github/emmasax1/Introduction-to-LightTable/badges/gpa.svg)](https://codeclimate.com/github/emmasax1/Introduction-to-LightTable)
-==========================
+# Introduction-to-LightTable
 
 A guide to setting up and using the features of LightTable.
 
