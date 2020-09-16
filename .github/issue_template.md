@@ -9,11 +9,11 @@ Please fill in the section that best describes your Issue and delete all other s
   ## To Reproduce
 
   > Steps to reproduce the behavior:
-
-  1. Go to "..."
-  2. Click on "..."
-  3. Scroll down to "..."
-  4. See error
+  >
+  > 1. Go to "..."
+  > 2. Click on "..."
+  > 3. Scroll down to "..."
+  > 4. See error
 
   ## Expected Behavior
 
@@ -26,19 +26,19 @@ Please fill in the section that best describes your Issue and delete all other s
   ## Desktop
 
   > Please complete the following information:
-
-  - OS: [e.g. iOS]
-  - Browser: [e.g. chrome, safari]
-  - Version: [e.g. 22]
+  >
+  > - OS: [e.g. iOS]
+  > - Browser: [e.g. chrome, safari]
+  > - Version: [e.g. 22]
 
   ## Smartphone
 
   > Please complete the following information:
-
-  - Device: [e.g. iPhone6]
-  - OS: [e.g. iOS8.1]
-  - Browser: [e.g. stock browser, safari]
-  - Version: [e.g. 22]
+  >
+  > - Device: [e.g. iPhone6]
+  > - OS: [e.g. iOS8.1]
+  > - Browser: [e.g. stock browser, safari]
+  > - Version: [e.g. 22]
 
   ## Additional Context
 
@@ -92,6 +92,8 @@ Please fill in the section that best describes your Issue and delete all other s
 
 <details><summary>General Question or Concern</summary>
 
-  ## What's your question or comment? Please add as much context as possible.
+  ## What's your question or comment?
+
+  > A clear and concise question or comment. Please add as much context as possible.
 
 </details>
