@@ -1,4 +1,4 @@
-Please fill in the section that best describes your Issue and delete all other sections.
+Please fill in the section that best describes your issue and delete all other sections.
 
 <details><summary>Bug Report</summary>
 
