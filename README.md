@@ -2,13 +2,21 @@
 
 A guide to setting up and using the features of LightTable.
 
-Our git cloning url is to the right, or you can just click Clone in Desktop to get a copy of this repository on your personal computer. 
+Our git cloning url is to the right, or you can just click Clone in Desktop to get a copy of this repository on your personal computer.
 
-#Java setup
+## Archival Notice
+
+This repository has been archived and designated as read-only. From GitHub's documentation:
+
+> This will make the emmasax4/Introduction-to-LightTable repository, issues, pull requests, labels, milestones, projects, wiki, releases, commits, tags, branches, reactions and comments read-only and disable any future comments. The repository can still be forked.
+
+To unarchive this project at any time, please reach out to [@emmasax4](mailto:saxxx027@morris.umn.edu).
+
+## Java setup
 
 Firstly, you should have Java, and the Java Developers Kit, already installed on your computer. If it isn't installed already, go to http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html and click the JDK option for your operating system. Follow the given directions for completing this download.
 
-#Leiningen setup
+## Leiningen setup
 
 You can download Leiningen from http://leiningen.org/. Make sure you have a reliable internet connection since leiningen runs a self-install script. Start by downloading the lein script. If when trying to download the lein script, the script just opens (instead of downloading), first try right-clicking and saving it as lein to a place such as the desktop. If that doesn't work, then try making a new text file and copy-pasting the whole script into the new file on your computer and saving it as lein to a location such as the desktop. Then cd into the place you've saved the file, such as desktop. Then move it using the terminal by typing
 
@@ -30,11 +38,11 @@ lein
 
 into the command line, and watch it self-install a bunch of things. Then, type lein once more, and when a list of leiningen commands appear, you know that leiningen is fully installed!
 
-#LightTable setup
+## LightTable setup
 
 You can download LightTable from http://www.lighttable.com/. Downloading LightTable is pretty easy. Follow the steps on the LightTable download site, move the folder that appears to the location you want on your computer, and you're set to go!
 
-#Autoexpect setup
+## Autoexpect setup
 
 For expectations, there is a little bit of formatting needed to make sure everything works correctly. You can make a new project by cd-ing into the desired directory and then typing:
 
