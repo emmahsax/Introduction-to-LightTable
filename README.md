@@ -10,7 +10,7 @@ This repository has been archived and designated as read-only. From GitHub's doc
 
 > This will make the emmasax4/Introduction-to-LightTable repository, issues, pull requests, labels, milestones, projects, wiki, releases, commits, tags, branches, reactions and comments read-only and disable any future comments. The repository can still be forked.
 
-To unarchive this project at any time, please reach out to [@emmasax4](mailto:saxxx027@morris.umn.edu).
+To unarchive this project at any time, please reach out to me at https://emmasax4.com/contact-me/.
 
 ## Java setup
 
@@ -156,6 +156,6 @@ into your command line. No leiningen commands should appear.
 
 LightTable: On windows, you can use the uninstall tool, otherwise, your best bet would be to just drag it to trash and then empty your trash.
 
-Autoexpect: Autoexpect isn't a thing we really "installed," so therefore, there is no uninstalling. If you would like to remove expectations or autoexpect plugin from from your project, remove references to them from your project.clj file. 
+Autoexpect: Autoexpect isn't a thing we really "installed," so therefore, there is no uninstalling. If you would like to remove expectations or autoexpect plugin from from your project, remove references to them from your project.clj file.
 
-Any comments and/or confusions? We'd love to hear from you! Email saxxx027@morris.umn.edu if you have any concerns!
+Any comments and/or confusions? We'd love to hear from you! Create a [GitHub issue](https://github.com/emmasax4/Introduction-to-LightTable/issues/new) if you have any concerns!
