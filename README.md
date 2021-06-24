@@ -150,9 +150,15 @@ LightTable: On windows, you can use the uninstall tool, otherwise, your best bet
 
 Autoexpect: Autoexpect isn't a thing we really "installed," so therefore, there is no uninstalling. If you would like to remove expectations or autoexpect plugin from from your project, remove references to them from your project.clj file.
 
-Any comments and/or confusions? We'd love to hear from you! Create a [GitHub issue](https://github.com/emmahsax/Introduction-to-LightTable/issues/new) if you have any concerns!
-
 ---
+
+### Contributing
+
+To submit a feature request, bug ticket, etc, please submit an official [GitHub Issue](https://github.com/emmahsax/Introduction-to-LightTable/issues/new).
+
+### Security Policy
+
+To report any security vulnerabilities, please view this repository's [Security Policy](https://github.com/emmahsax/Introduction-to-LightTable/security/policy).
 
 ### Licensing
 
