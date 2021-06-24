@@ -156,7 +156,7 @@ Any comments and/or confusions? We'd love to hear from you! Create a [GitHub iss
 
 ### Licensing
 
-For information on licensing, please see [LICENSE](https://github.com/emmahsax/Introduction-to-LightTable/blob/main/LICENSE.md).
+For information on licensing, please see [LICENSE.md](https://github.com/emmahsax/Introduction-to-LightTable/blob/main/LICENSE.md).
 
 ### Code of Conduct
 
