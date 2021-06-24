@@ -4,14 +4,6 @@ A guide to setting up and using the features of LightTable.
 
 Our git cloning url is to the right, or you can just click Clone in Desktop to get a copy of this repository on your personal computer.
 
-## Archival Notice
-
-This repository has been archived and designated as read-only. From GitHub's documentation:
-
-> This will make the emmahsax/Introduction-to-LightTable repository, issues, pull requests, labels, milestones, projects, wiki, releases, commits, tags, branches, reactions and comments read-only and disable any future comments. The repository can still be forked.
-
-To unarchive this project at any time, please reach out to me at https://emmasax.com/contact-me/.
-
 ## Java setup
 
 Firstly, you should have Java, and the Java Developers Kit, already installed on your computer. If it isn't installed already, go to http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html and click the JDK option for your operating system. Follow the given directions for completing this download.
@@ -159,3 +151,21 @@ LightTable: On windows, you can use the uninstall tool, otherwise, your best bet
 Autoexpect: Autoexpect isn't a thing we really "installed," so therefore, there is no uninstalling. If you would like to remove expectations or autoexpect plugin from from your project, remove references to them from your project.clj file.
 
 Any comments and/or confusions? We'd love to hear from you! Create a [GitHub issue](https://github.com/emmahsax/Introduction-to-LightTable/issues/new) if you have any concerns!
+
+---
+
+### Licensing
+
+For information on licensing, please see [LICENSE](https://github.com/emmahsax/Introduction-to-LightTable/blob/main/LICENSE.md).
+
+### Code of Conduct
+
+When interacting with this repository, please follow [Contributor Covenant's Code of Conduct](https://contributor-covenant.org).
+
+### Archival Notice
+
+This repository has been archived and designated as read-only. From GitHub's documentation:
+
+> This will make the emmahsax/Introduction-to-LightTable repository, issues, pull requests, labels, milestones, projects, wiki, releases, commits, tags, branches, reactions and comments read-only and disable any future comments. The repository can still be forked.
+
+To unarchive this project at any time, please reach out to me at https://emmasax.com/contact-me/.
