@@ -154,7 +154,9 @@ Autoexpect: Autoexpect isn't a thing we really "installed," so therefore, there 
 
 ### Contributing
 
-To submit a feature request, bug ticket, etc, please submit an official [GitHub Issue](https://github.com/emmahsax/Introduction-to-LightTable/issues/new).
+To submit a feature request, bug ticket, etc, please submit an official [GitHub issue](https://github.com/emmahsax/Introduction-to-LightTable/issues/new). To copy or make changes, please [fork this repository](https://github.com/emmahsax/Introduction-to-LightTable/fork). When/if you'd like to contribute back to this upstream, please create a pull request on this repository.
+
+Please follow included Issue Template(s) and Pull Request Template(s) when creating issues or pull requests.
 
 ### Security Policy
 
